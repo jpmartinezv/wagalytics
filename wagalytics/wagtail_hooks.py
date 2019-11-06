@@ -75,13 +75,13 @@ def editor_js():
                 html_results = '<li class="object"><h2><label>Analytics</label></h2><fieldset>';
                 html_results += 'This page has had <strong>' + yesterday_page_views + '</strong>';
                 html_results += ' views in the last 24 hours.</fieldset></li>';
-                $('#settings ul[class="objects"]').append(html_results);
+                $('#tab-configuracion ul[class="objects"]').append(html_results);
             }
 
             gapi.analytics.ready(function() {
                 $.get( "%s", function(data) {
                     gapi.analytics.auth.authorize({
-                      'serverAuth': {'access_token': data}
+                        'serverAuth': {'access_token': data}
                     });
                     // Work out slug from the 'Live' link. TODO: make less fragile
                     slug = $('a[class="status-tag primary"]').attr('href');

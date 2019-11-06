@@ -174,7 +174,7 @@ class Dashboard {
         this.setLoading(id);
         const queryData = {
             'metrics': 'ga:pageviews',
-            'dimensions': 'ga:hostname,ga:pagePath',
+            'dimensions': 'ga:hostname,ga:pageTitle',
             'sort': '-ga:pageviews',
             'max-results': 25
         };
@@ -273,7 +273,7 @@ function createTable(headings, rows){
  */
 function paginateTable(table) {
     let currentPage = 0;
-    const numPerPage = 5;
+    const numPerPage = 10;
     const $table = $(table);
 
     // This is the function which controls display of content
